@@ -1,179 +1,188 @@
-/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
+body {
+  background: #f7f5f5;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
-  padding: 0;
+  width: 100%;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
+.header:before{
+  content: '';
   position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 2;
 }
 
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+.header_content {
+  position: relative;
+  height: 175px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.header_logo {
+  padding: 75px 0 45px 80px;
+  position: relative;
+  z-index: 3;
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+.header_logo img{
+  max-width: 100%;
+  display: block;
 }
 
-.clearfix::after {
-  clear: both;
+.header_burger {
+  display: none;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+.menu_list {
+  list-style : none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  position: relative;
+  z-index: 2;
+  padding: 30px 70px 0 0;
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+.link {
+  padding-right: 47px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 17.1613px;
+  line-height: 21px;
+  color: #000;
+}
+
+button {
+  height: 60px;
+  width: 250px;
+  background: #000;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 22px;
+  color: #FFFFFF;
+}
+
+.header_btn {
+  height: 50px;
+  width: 182px;
+  background: #75BF7A;
+  font-size: 18px;
+  border: 0;
+  font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 950px;
+  }
+}
+@media (max-width: 948px) {
+  body.lock {
+    overflow: hidden;
+  }
+
+  .header_content {
+    height: 90px;
+  }
+
+  .header_logo {
+    padding: 35px 0 20px 30px;
+    width: 93px;
+    height: 27px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .header_burger {
+    display: block;
+    margin: 20px 30px 0 0;
+    width: 50px;
+    height: 30px;
+    position: relative;
+    z-index: 3;
+    background: #fff;
+    border: none;
+  }
+
+  .header_burger span {
+    position: absolute;
+    background-color: #000000;
+    width: 100%;
+    height: 3px;
+    top: 13px;
+    right: 0;
+  }
+
+  .header_burger:before,
+  .header_burger:after {
+    position: absolute;
+    content: '';
+    background-color: #000000;
+    width: 100%;
+    height: 3px;
+    left: 0;
+  }
+
+  .header_burger:before {
+    top: 0;
+  }
+
+  .header_burger:after {
+    bottom: 0;
+  }
+
+  .menu_list {
+    display: block;
+    position: absolute;
+    top: 75px;
+    left: -240px;
+    width: 230px;
+    height: 230px;
+    background-color: rgb(173, 230, 178);
+    overflow: auto;
+    padding: 20px 0 0 10px;
+    transition: transform .5s;
+  }
+
+  .menu_link {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .header_btn {
+    height: 30px;
+    width: 110px;
+    font-size: 16px;
+  }
+
+  .header.open .menu_list {
+    transform: translateX(100%);
+  }
 }

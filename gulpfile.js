@@ -108,7 +108,6 @@ function watchFiles() {
 function server() {
   browsersync.init({
     server: { routes: { '/': dist.root, '/tests': './app/js/' }},
-    browser: ['firefox'],
     port:   4000,
     notify: false,
     open:   true
